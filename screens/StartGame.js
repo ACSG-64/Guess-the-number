@@ -8,6 +8,7 @@ export default function StartGame({navigateToStartGame}) {
     const [enteredNumber, setEnteredNumber] = useState('');
 
     const numberInputHandler = (input) => {
+        // Only accept positive integers as input
         const intInput = parseInt(input);
         setEnteredNumber(!isNaN(intInput) ? `${intInput}` : '')
     }
@@ -32,7 +33,7 @@ export default function StartGame({navigateToStartGame}) {
         }]);
     }
 
-    const resetHandler = () => setEnteredNumber('');
+    const resetHandler = () => setEnteredNumber(''); // Clear the input text component
 
     return (
         <View style={styles.screen}>

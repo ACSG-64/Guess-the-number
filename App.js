@@ -19,7 +19,7 @@ export default function App() {
         "open-sans-bold": require('./assets/fonts/OpenSans-Bold.ttf'),
     });
 
-    if (!fontsLoaded) return <AppLoading/>;
+    if (!fontsLoaded) return <AppLoading/>; // While the fonts are loading, keep showing the splash screen
 
     const navigateToStartGameScreen = () => {
         setSelectedNumber(-1);

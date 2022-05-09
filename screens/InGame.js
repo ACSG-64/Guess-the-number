@@ -20,12 +20,14 @@ export default function InGame({selectedNumber, navigateToGameOver}) {
     const [guessAttempts, setGuessAttempts] = useState([initialGuess]);
     const [totalGuessAttempts, setTotalGuessAttempts] = useState(1);
 
+    // Reset the guess bounds when this component is rendered for the first time
+    useEffect(() => guessBounds.reset(), []);
+
+    // Check if the guess is equal to the selected number when the state changes
     useEffect(() => {
         if (currentGuess === selectedNumber)
             navigateToGameOver(totalGuessAttempts);
     }, [currentGuess, totalGuessAttempts])
-
-    useEffect(() => guessBounds.reset(), [])
 
     const nextGuessHandler = (bound) => {
         if (bound === 'lower' && selectedNumber < currentGuess) {
