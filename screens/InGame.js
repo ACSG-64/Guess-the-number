@@ -1,8 +1,9 @@
 import {FlatList, Text, View, StyleSheet, Alert} from "react-native";
-import Title from "../components/ui/Title";
 import {useEffect, useState} from "react";
-import NumberContainer from "../components/game/NumberContainer";
+
+import Title from "../components/ui/Title";
 import PrimaryButton from "../components/ui/PrimaryButton";
+import NumberContainer from "../components/game/NumberContainer";
 import GuessAttemptLog from "../components/game/GuessAttemptLog";
 
 const guessBounds = {

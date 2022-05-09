@@ -1,8 +1,9 @@
 import {useState} from "react";
 import {Alert, View, TextInput, StyleSheet, Text} from "react-native";
+
+import Title from "../components/ui/Title";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Colors from "../values/colors";
-import Title from "../components/ui/Title";
 
 export default function StartGame({navigateToStartGame}) {
     const [enteredNumber, setEnteredNumber] = useState('');

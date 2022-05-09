@@ -1,4 +1,5 @@
 import {StyleSheet, Text, View} from "react-native";
+
 import Colors from "../../values/colors";
 
 export default function GuessAttemptLog({attemptNumber, guess}) {

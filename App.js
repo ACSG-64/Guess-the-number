@@ -3,11 +3,11 @@ import {ImageBackground, StyleSheet} from 'react-native';
 import {SafeAreaView} from "react-native-safe-area-context";
 import {LinearGradient} from "expo-linear-gradient";
 import {useFonts} from "expo-font";
+import AppLoading from "expo-app-loading";
 
 import StartGame from "./screens/StartGame";
 import InGame from "./screens/InGame";
 import GameOver from "./screens/GameOver";
-import AppLoading from "expo-app-loading";
 
 export default function App() {
     const [currentScreen, setCurrentScreen] = useState('StartGame');
