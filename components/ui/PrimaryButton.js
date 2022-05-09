@@ -1,8 +1,9 @@
 import {Text, View, Pressable, StyleSheet} from "react-native";
+import Colors from "../../values/colors";
 
-export default function PrimaryButton({children}) {
+export default function PrimaryButton({children, onPress}) {
     return (
-        <Pressable style={({pressed}) => pressed && styles.pressed}>
+        <Pressable style={({pressed}) => pressed && styles.pressed} onPress={onPress}>
             <View style={styles.content}>
                 <Text style={styles.text}>{children}</Text>
             </View>
@@ -12,7 +13,7 @@ export default function PrimaryButton({children}) {
 
 const styles = StyleSheet.create({
     content: {
-        backgroundColor: '#72063c',
+        backgroundColor: Colors.deepCarmine,
         borderRadius: 28,
         paddingVertical: 8,
         paddingHorizontal: 16,
