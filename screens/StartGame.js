@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {Alert, View, TextInput, StyleSheet, Text} from "react-native";
+import {Alert, View, TextInput, StyleSheet, Text, KeyboardAvoidingView} from "react-native";
 
 import Title from "../components/ui/Title";
 import PrimaryButton from "../components/ui/PrimaryButton";
@@ -37,32 +37,37 @@ export default function StartGame({navigateToStartGame}) {
     const resetHandler = () => setEnteredNumber(''); // Clear the input text component
 
     return (
-        <View style={styles.screen}>
-            <Title>Guess a number</Title>
-            <View style={styles.inputContainer}>
-                <Text style={styles.textInputLabel}>Enter a number:</Text>
-                <TextInput
-                    style={styles.textInput}
-                    maxLength={2}
-                    keyboardType={"numeric"}
-                    value={enteredNumber}
-                    onChangeText={numberInputHandler}
-                />
-                <View style={styles.buttonsContainer}>
-                    <View style={styles.buttonContainer}>
-                        <PrimaryButton onPress={resetHandler}>Reset</PrimaryButton>
-                    </View>
-                    <View style={styles.buttonContainer}>
-                        <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
+        <KeyboardAvoidingView style={styles.screen} behavior="position">
+            <View style={styles.root}>
+                <Title>Guess a number</Title>
+                <View style={styles.inputContainer}>
+                    <Text style={styles.textInputLabel}>Enter a number:</Text>
+                    <TextInput
+                        style={styles.textInput}
+                        maxLength={2}
+                        keyboardType={"numeric"}
+                        value={enteredNumber}
+                        onChangeText={numberInputHandler}
+                    />
+                    <View style={styles.buttonsContainer}>
+                        <View style={styles.buttonContainer}>
+                            <PrimaryButton onPress={resetHandler}>Reset</PrimaryButton>
+                        </View>
+                        <View style={styles.buttonContainer}>
+                            <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
+                        </View>
                     </View>
                 </View>
             </View>
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 
 const styles = StyleSheet.create({
     screen: {
+        flex: 1
+    },
+    root: {
         flex: 1,
         padding: '8%',
         alignItems: 'center',
